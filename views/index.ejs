@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuvagalleria</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles.css"> 
+  
+</head>
+<body>
+
+    
+
+    <div class="container">
+        <h1 class="align-self-center">Kuvagalleria</h1>
+
+        <% if (kuvat) { %>
+
+            <!-- creating a counter for keeping track of how many pictures have been rendered -->
+            <% let laskuri = 0; %>
+
+            <!-- iterating through the kuvat array and creating a grid containing pictures with the data from each object -->
+            <% kuvat.forEach((kuva) => { %>
+
+                <!-- the first picture starts a new row, and so does every fourth picture after-->
+                <% if (laskuri % 4 == 0)  { %>
+                
+                    <div class="row">
+                <% }; %>
+                        <div class="col m-2">
+                            <div class="container-fluid">
+                                <!-- container inside each column for laying out the picture and its text -->
+                                <a href="https://picsum.photos/id/<%=kuva.id%>/800">
+                                <!-- each picture is a link that leads to a 800 px version of the pic-->
+                                <!-- inside each link is the picture, fetched with the id from picsum.photos; alt text is the author and id of picture -->
+                                <img class="img-fluid" src="https://picsum.photos/id/<%=kuva.id%>/300/200" alt="<%=kuva.author%>, <%=kuva.id%>"></a>
+                                <div class="text py-2 px-3">
+                                    <!-- a div for caption that contains the author name and picture ID. Some of it is customized with styles.css -->
+                                    <p>
+                                        <span class="float-left"><%=kuva.author%></span> 
+                                        <span class="float-right">#<%=kuva.id%></span>
+                                        
+                                    </p>
+                                    </div>
+                            
+                            </div>
+                        </div>
+                        
+                      <!-- when the fourth picture in a row has been added, the row tag is closed so the next iteration can start a new row -->
+                <% if (laskuri % 4 == 3 )  { %>
+                    </div>
+                <% }; %>
+                <!-- counter is updated each iteration in order to track when the row needs to be changed -->
+           <% laskuri ++; %>
+        <% }); %>
+        <% }; %>
+      
+            
+        
+        </div>
+        
+        
+    </div>
+
+
+
+
+
+    
+</body>
+</html>

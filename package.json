@@ -1,0 +1,16 @@
+{
+  "name": "kuvagalleria",
+  "version": "1.0.0",
+  "description": "Kuvagalleria Lorem Picsum -palvelusta",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Katri-Maija",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "restify-clients": "^3.1.0"
+  }
+}

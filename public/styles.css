@@ -1,0 +1,22 @@
+/* this stylesheet adds some additional customisations that were easier to handle like this rather than through Bootstrap */
+
+.text {
+    background-color: black;
+    color: white;
+    position: absolute;
+    opacity: 0.85;
+    width: 100%;
+    bottom: 0;
+}
+
+
+.container-fluid {
+    position: relative;
+    padding: 0;
+}
+
+.img-fluid {
+    display: inline-block;
+}
+
+
